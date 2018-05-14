@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+//常量定义
 const PI float64 = 3.1415926
 
 /*
@@ -16,7 +17,7 @@ func main() {
 	var num = 250
 	fmt.Println(num)
 
-	//声明bin赋值
+	//声明并赋值
 	gay冰 := "gaygay的"
 	fmt.Println(gay冰)
 
