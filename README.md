@@ -47,7 +47,7 @@
     + [时间操作](/often/Go_time.go)
     + [随机密码生成器](/often/Go_random-pwd.go)
     + [简易WebFtp程序](/often/Go_static-server.go)
-    + [TCP聊天程序](/often/Go_tpc-chat.go)
+    + [TCP聊天程序](/chat/Go_tpc-chat.go)
     
 ## 感谢大佬
 [biezhi](https://github.com/biezhi/go-examples)
