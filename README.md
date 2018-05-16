@@ -46,7 +46,7 @@
     + [执行系统命令](/often/Go_exec-cmd.go)
     + [时间操作](/often/Go_time.go)
     + [随机密码生成器](/often/Go_random-pwd.go)
-    + [简易WebFtp程序](/often/Go_static-server.go)
+    + [简易WebFtp程序](/often/Go_web-ftp.go)
     + [TCP聊天程序](/chat/Go_tpc-chat.go)
     
 ## 感谢大佬
