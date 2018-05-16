@@ -4,7 +4,7 @@ import "fmt"
 
 type person struct {
 	Name string
-	Age int
+	Age  int
 }
 
 //类似于Java中的toString

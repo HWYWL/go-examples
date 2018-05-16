@@ -1,15 +1,15 @@
 package main
 
 import (
-	"net/http"
-	"regexp"
-	"time"
-	"html/template"
-	"path/filepath"
 	"fmt"
-	"strconv"
-	"os"
+	"html/template"
 	"io"
+	"net/http"
+	"os"
+	"path/filepath"
+	"regexp"
+	"strconv"
+	"time"
 )
 
 var mux map[string]func(http.ResponseWriter, *http.Request)
@@ -21,7 +21,7 @@ type home struct {
 
 const (
 	Template_Dir = "./public/html/"
-	Upload_Dir = "./public/upload/"
+	Upload_Dir   = "./public/upload/"
 )
 
 func main() {
@@ -45,16 +45,16 @@ func (*MyHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 	if ok, _ := regexp.MatchString("/css/", r.URL.String()); ok {
 		http.StripPrefix("/css/", http.FileServer(http.Dir("./css/"))).ServeHTTP(w, r)
-	}else {
+	} else {
 		http.StripPrefix("/", http.FileServer(http.Dir("./upload/"))).ServeHTTP(w, r)
 	}
 }
 
-func upload(w http.ResponseWriter, r *http.Request)  {
+func upload(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "GET" {
 		t, _ := template.ParseFiles(Template_Dir + "web_upload.html")
 		t.Execute(w, "上传文件")
-	}else {
+	} else {
 		r.ParseMultipartForm(32 << 20)
 		file, handler, err := r.FormFile("uploadfile")
 		if err != nil {
@@ -78,13 +78,13 @@ func upload(w http.ResponseWriter, r *http.Request)  {
 	}
 }
 
-func IndexPage(w http.ResponseWriter, r *http.Request)  {
+func IndexPage(w http.ResponseWriter, r *http.Request) {
 	title := home{Title: "首页"}
 	t, _ := template.ParseFiles(Template_Dir + "web_ftp.html")
 	t.Execute(w, title)
 }
 
-func StaticServer(w http.ResponseWriter, r *http.Request)  {
+func StaticServer(w http.ResponseWriter, r *http.Request) {
 	http.StripPrefix("/file", http.FileServer(http.Dir(Upload_Dir))).ServeHTTP(w, r)
 }
 

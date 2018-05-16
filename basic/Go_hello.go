@@ -8,7 +8,7 @@ const PI float64 = 3.1415926
 /*
 	var语句定义了一个变量的列表，跟函数的参数列表一样，在类型的后面。
 	就像在例子中看到的一样，var语句可以定义在包或者函数级别
- */
+*/
 func main() {
 	fmt.Println("Hello World,少年你low逼的一天开始了")
 	fmt.Println("圆周率：", PI)
@@ -28,5 +28,5 @@ func main() {
 
 	fmt.Println(p1, p2, p3, p4)
 
-	fmt.Println("3 + 2 = ", 3 + 2)
+	fmt.Println("3 + 2 = ", 3+2)
 }

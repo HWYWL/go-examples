@@ -1,14 +1,14 @@
 package main
 
 import (
-	"strconv"
 	"fmt"
+	"strconv"
 )
 
 // Go 没有类，然而任然可以在结构体类型上定义方法
 type Person struct {
 	name string
-	age int
+	age  int
 }
 
 func (p *Person) sayHello() string {

@@ -1,17 +1,17 @@
 package main
 
 import (
-	log1 "github.com/sirupsen/logrus"
-	log2 "github.com/cihub/seelog"
-	"os"
 	"fmt"
+	log2 "github.com/cihub/seelog"
+	log1 "github.com/sirupsen/logrus"
+	"os"
 )
 
-func TestLoggrus1()  {
-	log1.WithFields(log1.Fields{"姓名":"懿"}).Info("中奖啦！！！")
+func TestLoggrus1() {
+	log1.WithFields(log1.Fields{"姓名": "懿"}).Info("中奖啦！！！")
 }
 
-func TestLoggrus2()  {
+func TestLoggrus2() {
 	//日志格式化为JSON而不是默认的ASCII
 	log1.SetFormatter(&log1.JSONFormatter{})
 
@@ -22,19 +22,19 @@ func TestLoggrus2()  {
 	log1.SetLevel(log1.WarnLevel)
 
 	//此行不会打印
-	log1.WithFields(log1.Fields{"姓名":"懿"}).Info("我居然没中奖！！！")
+	log1.WithFields(log1.Fields{"姓名": "懿"}).Info("我居然没中奖！！！")
 
 	log1.WithFields(log1.Fields{"姓名": "YI"}).Error("中奖是不可能中奖的，这辈子都是不可能的！")
 }
 
-func TestSeelog1()  {
+func TestSeelog1() {
 	defer log2.Flush()
 	log2.Info("Hello from seelog!")
 }
 
-func TestSeelog2()  {
+func TestSeelog2() {
 	//xml 格式的字符串，xml 配置了如何输出日志
-	testConfig :=`
+	testConfig := `
 	<seelog type="sync">
         // 配置输出项，本例表示同时输出到控制台和日志文件中
     	<outputs formatid="main">
@@ -47,15 +47,15 @@ func TestSeelog2()  {
     	</formats>
     </seelog>`
 
-    //根据配置信息生成logger(配置信息的对象表示)
-    logger, err := log2.LoggerFromConfigAsBytes([]byte(testConfig))
+	//根据配置信息生成logger(配置信息的对象表示)
+	logger, err := log2.LoggerFromConfigAsBytes([]byte(testConfig))
 	if err != nil {
 		fmt.Println(err)
 	}
 
 	//配置日志组件加载配置信息，然后输出函数比如info在输出时，会加载改配置
 	log2.ReplaceLogger(logger)
-    log2.Info("Hello from Seelog")
+	log2.Info("Hello from Seelog")
 }
 
 func main() {

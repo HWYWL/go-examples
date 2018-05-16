@@ -1,8 +1,8 @@
 package main
 
 import (
-	"os"
 	"fmt"
+	"os"
 )
 
 //文件读写
@@ -10,7 +10,7 @@ import (
 var userFile = "test.txt"
 
 //创建文件并写入字符串
-func CreateFile()  {
+func CreateFile() {
 	fout, err := os.Create(userFile)
 	//延迟执行，在最后执行
 	defer fout.Close()
@@ -24,7 +24,7 @@ func CreateFile()  {
 }
 
 //文件读取
-func ReadFile()  {
+func ReadFile() {
 	fin, err := os.Open(userFile)
 	defer fin.Close()
 	if err != nil {
@@ -43,7 +43,7 @@ func ReadFile()  {
 }
 
 // 删除文件
-func DeleteFile()  {
+func DeleteFile() {
 	os.Remove(userFile)
 }
 

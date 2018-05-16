@@ -4,7 +4,7 @@ import "fmt"
 
 type User struct {
 	name string
-	agg int
+	agg  int
 }
 
 var m map[string]User
@@ -21,8 +21,8 @@ func main() {
 	fmt.Println("=====华丽丽的分割线=====")
 
 	var m2 = map[string]User{
-		"yi":{"懿", 25},
-		"rose":{"肉丝", 22},
+		"yi":   {"懿", 25},
+		"rose": {"肉丝", 22},
 	}
 	fmt.Println(m2)
 

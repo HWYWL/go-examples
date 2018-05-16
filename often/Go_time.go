@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"time"
 	"log"
+	"time"
 )
 
 const (
@@ -25,12 +25,12 @@ const (
 	StampNano  = "Jan _2 15:04:05.000000000"
 
 	//自定义
-	MyRFC	   = "2006-01-02 15:04:05"
-	MyRFC1	   = "2006-01-02"
+	MyRFC  = "2006-01-02 15:04:05"
+	MyRFC1 = "2006-01-02"
 )
 
 //获取当前时间
-func getNow()  {
+func getNow() {
 	//获取当前时间，返回time.Time对象
 	//2018-05-15 17:41:09.9962013 +0800 CST m=+0.003000001
 	// 其中CST可视为美国，澳大利亚，古巴或中国的标准时间
@@ -44,7 +44,7 @@ func getNow()  {
 }
 
 //格式化时间显示
-func formatUnixTime()  {
+func formatUnixTime() {
 	//获取当前时间，进行格式化
 	//2018-05-15 17:50:45
 	fmt.Println(time.Now().Format(MyRFC))
@@ -55,14 +55,14 @@ func formatUnixTime()  {
 }
 
 //获取指定时间戳的年份
-func getYear()  {
+func getYear() {
 	//获取指定时间戳的年月日时分秒
 	t := time.Unix(1526377769, 0)
 	fmt.Printf("%d-%d-%d %d:%d:%d\n", t.Year(), t.Month(), t.Day(), t.Hour(), t.Minute(), t.Second())
 }
 
 //时间字符串转换时间戳
-func strToUnix()  {
+func strToUnix() {
 	//先用time.Parse对时间字符串进行分析，如果正确会得到一个time.Time对象
 	//后面就可以用time.Time对象的函数Unix进行获取
 	t, err := time.Parse(MyRFC, "2018-05-15 18:01:32")
@@ -74,7 +74,7 @@ func strToUnix()  {
 }
 
 //根据时间戳获取当日开始的时间戳
-func getDayStartUnix()  {
+func getDayStartUnix() {
 	t := time.Unix(1526407292, 0).Format(MyRFC1)
 	sts, err := time.Parse(MyRFC1, t)
 	if err != nil {
@@ -85,7 +85,7 @@ func getDayStartUnix()  {
 }
 
 //休眠
-func sleep()  {
+func sleep() {
 	//time.Millisecond  1毫秒
 	// time.Microsecond 1纳秒
 

@@ -1,14 +1,14 @@
 package main
 
 import (
-	"os/exec"
-	"log"
 	"io/ioutil"
+	"log"
+	"os/exec"
 )
 
 //执行系统命令
 
-func Exec1()  {
+func Exec1() {
 	//执行系统命令
 	//第一个参数是命令名称
 	//后面参数可以有多个，命令参数

@@ -2,13 +2,13 @@ package main
 
 import (
 	"crypto/md5"
-	"io"
 	"fmt"
+	"io"
 	"os"
 )
 
 //计算字符串md5
-func CalcStringMd5()  {
+func CalcStringMd5() {
 	h := md5.New()
 	io.WriteString(h, "The fog is getting thicker")
 	io.WriteString(h, "Add leon's getting hahaha")
@@ -23,7 +23,7 @@ func CalcStringMd5()  {
 }
 
 //计算文件md5
-func ClacFileMd5()  {
+func ClacFileMd5() {
 	file, err := os.Open("README.md")
 	if err != nil {
 		panic(err)

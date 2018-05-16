@@ -6,12 +6,12 @@ import (
 )
 
 type Student struct {
-	Name string
-	Age int
-	Guake bool
+	Name    string
+	Age     int
+	Guake   bool
 	Classes []string
-	Price float32
-} 
+	Price   float32
+}
 
 func main() {
 	st := &Student{
@@ -26,7 +26,7 @@ func main() {
 	var jsonstr string
 	if err != nil {
 		fmt.Printf("err was %v", err)
-	}else {
+	} else {
 		//将对象解析为json字符串
 		jsonstr = string(b)
 		fmt.Println(jsonstr)
@@ -37,7 +37,7 @@ func main() {
 	err = json.Unmarshal([]byte(jsonstr), &st2)
 	if err != nil {
 		fmt.Printf("err was %v", err)
-	}else {
+	} else {
 		fmt.Println(st2)
 	}
 }

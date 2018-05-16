@@ -1,11 +1,11 @@
 package main
 
 import (
-	"net/http"
 	"fmt"
 	"io/ioutil"
-	"strings"
+	"net/http"
 	"net/url"
+	"strings"
 )
 
 const BaseUrl = "http://httpbin.org"
@@ -28,8 +28,8 @@ func httpGet() {
 }
 
 //post方式请求
-func httpPost()  {
-	resp, err := http.Post(BaseUrl + "/post?hello=world",
+func httpPost() {
+	resp, err := http.Post(BaseUrl+"/post?hello=world",
 		"application/x-www-form-urlencoded",
 		strings.NewReader("name=yi"))
 
@@ -47,9 +47,9 @@ func httpPost()  {
 }
 
 //post表单提交
-func httpPostForm()  {
-	resp, err := http.PostForm(BaseUrl + "/post",
-		url.Values{"key":{"Value"}, "id":{"123"}})
+func httpPostForm() {
+	resp, err := http.PostForm(BaseUrl+"/post",
+		url.Values{"key": {"Value"}, "id": {"123"}})
 	if err != nil {
 		fmt.Printf("err was %v", err)
 	}
@@ -63,10 +63,10 @@ func httpPostForm()  {
 	fmt.Println(string(body))
 }
 
-func httpDo()  {
+func httpDo() {
 	client := &http.Client{}
 
-	req, err := http.NewRequest("Post", BaseUrl + "/post", strings.NewReader("name=xxxxxxx"))
+	req, err := http.NewRequest("Post", BaseUrl+"/post", strings.NewReader("name=xxxxxxx"))
 	if err != nil {
 		fmt.Printf("handle error %v", err)
 	}

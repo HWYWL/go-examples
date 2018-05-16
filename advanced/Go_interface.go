@@ -9,7 +9,6 @@ type Map interface {
 }
 
 type HashMap struct {
-
 }
 
 var pool = make(map[string]string)
@@ -18,7 +17,7 @@ func (self *HashMap) put(key, value string) {
 	pool[key] = value
 }
 
-func (self * HashMap) get(key string) string {
+func (self *HashMap) get(key string) string {
 	return pool[key]
 }
 

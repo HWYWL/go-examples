@@ -6,7 +6,7 @@ import (
 )
 
 // slice/切片
-func slice1()  {
+func slice1() {
 	s := []int{2, 3, 5, 7, 11, 13}
 	fmt.Println("s ==", s)
 
@@ -16,7 +16,7 @@ func slice1()  {
 }
 
 //slice 可以包含任意的类型， 包括另一个 slice
-func slice2()  {
+func slice2() {
 	//二维数组
 	game := [][]string{
 		[]string{"_", "_", "_"},
@@ -34,7 +34,7 @@ func slice2()  {
 }
 
 //slice 可以重新切片，创建一个新的 slice 值指向相同的数组
-func slice3()  {
+func slice3() {
 	s := []int{2, 3, 5, 7, 11, 13}
 	fmt.Println("s ==", s)
 	fmt.Println("s[1:4] ==", s[1:4])
@@ -47,7 +47,7 @@ func slice3()  {
 }
 
 //slice 由函数 make 创建， 这会分配一个全是零值得数组并返回一个 slice 指向这个数组
-func slice4()  {
+func slice4() {
 	a := make([]int, 5)
 	printSlice("a", a)
 
@@ -62,7 +62,7 @@ func slice4()  {
 }
 
 // nil slice
-func slice5()  {
+func slice5() {
 	var z []int
 	fmt.Println(z, len(z), cap(z))
 

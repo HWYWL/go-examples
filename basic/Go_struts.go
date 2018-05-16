@@ -8,16 +8,16 @@ type Point struct {
 }
 
 var (
-	vp1 = Point{1, 2}		//类型为point
-	vp2 = Point{x: 20}			//y=0,被省略
-	vp3 = Point{}				//x=0,y=0
-	mvp = &Point{1, 2}	//类型为*Point
+	vp1 = Point{1, 2}  //类型为point
+	vp2 = Point{x: 20} //y=0,被省略
+	vp3 = Point{}      //x=0,y=0
+	mvp = &Point{1, 2} //类型为*Point
 )
 
 func main() {
 	fmt.Println(Point{20, 78})
 
-	p := 	Point{10, 20}
+	p := Point{10, 20}
 	//结构体字段使用点号来访问
 	p.x = 33
 	fmt.Println(p.x)

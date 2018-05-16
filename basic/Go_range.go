@@ -17,7 +17,7 @@ func main() {
 		pow[i] = 1 << uint(i)
 	}
 	//可以通过赋值给 _ 来忽略序号和值
-	for _, value := range pow  {
+	for _, value := range pow {
 		fmt.Printf("%d\n", value)
 	}
 }

@@ -1,12 +1,12 @@
 package main
 
 import (
-	"net/http"
 	"fmt"
 	"log"
+	"net/http"
 )
 
-func index(w http.ResponseWriter, r *http.Request)  {
+func index(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Hello golang http!")
 }
 

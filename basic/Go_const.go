@@ -7,7 +7,7 @@ import (
 
 /*
 	常量操作
- */
+*/
 func main() {
 	const ci = 3.14
 	fmt.Println(ci)

@@ -1,10 +1,10 @@
 package main
 
 import (
+	"archive/zip"
+	"io"
 	"os"
 	"path/filepath"
-	"io"
-	"archive/zip"
 	"strings"
 )
 
@@ -33,7 +33,7 @@ func unzip(archive, target string) error {
 		//最后执行 关闭资源
 		defer fileReader.Close()
 
-		targetFile, err := os.OpenFile(path, os.O_WRONLY | os.O_CREATE | os.O_TRUNC, file.Mode())
+		targetFile, err := os.OpenFile(path, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, file.Mode())
 		if err != nil {
 			return err
 		}
@@ -87,7 +87,7 @@ func zipit(source, target string) error {
 
 		if info.IsDir() {
 			header.Name += "/"
-		}else {
+		} else {
 			header.Method = zip.Deflate
 		}
 

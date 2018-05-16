@@ -1,11 +1,11 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"net"
-	"strings"
-	"bufio"
 	"os"
+	"strings"
 )
 
 //聊天服务器客户端

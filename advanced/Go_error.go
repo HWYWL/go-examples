@@ -1,13 +1,13 @@
 package main
 
 import (
-	"time"
 	"fmt"
+	"time"
 )
 
 type MyError struct {
 	time time.Time
-	msg string
+	msg  string
 }
 
 func (e MyError) Error() string {
@@ -22,7 +22,7 @@ func main() {
 	//Go 程序使用 error 值来表示错误状态
 	if err := run(); err != nil {
 		fmt.Println(err)
-	}else {
+	} else {
 		fmt.Println("一切正常")
 	}
 }

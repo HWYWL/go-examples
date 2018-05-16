@@ -20,11 +20,11 @@ import (
 	如果条件表达式的值变为false，则迭代终止。
 
 	注意：不像C,Java或者JavaScript 等语言，for 语句的三个部分并不需要用括号括起来，但循环体必须使用{ }括起来
- */
+*/
 
 func for1() {
 	sum := 0
-	for i := 0; i < 10 ; i++ {
+	for i := 0; i < 10; i++ {
 		sum += i
 	}
 
@@ -34,7 +34,7 @@ func for1() {
 //循环初始化语句和后置语句都是可选的
 func for2() {
 	sum := 1
-	for ; sum < 100 ;  {
+	for sum < 100 {
 		sum += sum
 	}
 
@@ -52,10 +52,10 @@ func while1() {
 }
 
 //就像 for 循环一样，Go 的 if 语句也不要求用 () 将条件括起来，同时 { } 还是必须的
-func if1(x int)  {
+func if1(x int) {
 	if x > 0 {
 		fmt.Println("x > 0")
-	}else {
+	} else {
 		fmt.Println("x <= 0")
 	}
 }
@@ -70,7 +70,7 @@ func if2(x, y, lim float64) float64 {
 }
 
 //选择语句
-func switch1()  {
+func switch1() {
 	fmt.Print("当前操作系统是：")
 	switch os := runtime.GOOS; os {
 	case "windows":
@@ -102,7 +102,7 @@ func switch2() {
 }
 
 //没有条件的switch 同 switch true一样
-func switch3()  {
+func switch3() {
 	t := time.Now()
 	switch {
 	case t.Hour() < 12:
@@ -113,7 +113,6 @@ func switch3()  {
 		fmt.Println("晚上好！")
 	}
 }
-
 
 func main() {
 	for1()
