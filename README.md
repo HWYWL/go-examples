@@ -18,7 +18,8 @@
     + [range/范围](/basic/Go_range.go)
     + [map](/basic/Go_map.go)
     + [函数进阶](/basic/Go_func_pro.go)
-    
+    + [应用闭包](/basic/Go_function_return.go)
+
 - 方法和接口
     + [方法](/advanced/Go_methods.go)
     + [接口](/advanced/Go_interface.go)
