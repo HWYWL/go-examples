@@ -13,6 +13,7 @@
     + [defer](/basic/Go_defer.go)
     + [指针](/basic/Go_pointers.go)
     + [结构体](/basic/Go_struts.go)
+    + [带标签结构体](/basic/Go_struct_tag.go)
     + [数组](/basic/Go_array.go)
     + [slice/切片](/basic/Go_slice.go)
     + [range/范围](/basic/Go_range.go)
